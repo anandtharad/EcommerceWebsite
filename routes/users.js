@@ -6,7 +6,7 @@ const passport = require("passport")
 
 const users = require("../controllers/user")
 const products=require("../controllers/products")
-router.route("/landingpage")
+router.route("/")
 .get(catchAsync(users.landing))
 
 router.route("/register")
