@@ -23,7 +23,7 @@ const app=express()
 
 
 
-mongoose.connect(process.env.Mongo_api);
+mongoose.connect(`${process.env.Mongo_api}`);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
