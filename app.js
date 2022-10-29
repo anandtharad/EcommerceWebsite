@@ -23,7 +23,7 @@ const app=express()
 
 
 
-mongoose.connect(process.env.Mongo_api);
+mongoose.connect(process.env.Mongo_api || "mongodb+srv://admin:zMC637R1quJvEKEf@cluster0.y6xht2v.mongodb.net/Ecommerce");
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
