@@ -94,13 +94,13 @@ module.exports.deleteProduct = async (req, res) => {
 }
 
 module.exports.shoppingcart= async(req, res)=>{
-    res.render("shop/cart")
+    res.render("shop/cart", {product: null})
 }
-
 module.exports.updateCart = async(req, res)=>{
     const id=req.body.cart;
     const qty=req.body.qty;
+    console.log(id, qty)
     const product1= await Product.findById(id);
-    const products=products.push(product1)    
+
     res.render("shop/cart", {product: product1, qty})
 }

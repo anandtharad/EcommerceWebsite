@@ -56,7 +56,7 @@
             <form action="/cart" method="post">
                 <label for="cart-qty" class="form-label">Quantity</label>
                 <input type="text" style="display: none;" name="cart" value="<%= product._id %>">
-                <input type="number" name="qty" id="cart-qty" class="form-control mb-3" min="0" placeholder="Enter Quantity">
+                <input type="number" name="qty" id="cart-qty" class="form-control mb-3" min="1" required placeholder="Enter Quantity">
                 <button class="btn btn-primary">Add to Cart</button>
             </form>
             <% if(currentUser){ %>
@@ -116,11 +116,13 @@
         </div>
     </div>
     <div class="d-flex justify-content-between">
-        <h3>Similar Products</h3>
+        <h3>Specially For YOU!</h3>
     </div>
     <div>
         <div class="card-group">
+            <% let c=0; %> 
             <% for(let p of similarproducts){ %>
+                <% if(c<=4){ %> 
                 <% if(p.title!==product.title) { %>
                     <div class="col">
                         <div class="card h-100">
@@ -146,6 +148,8 @@
                     </div>
 
                     <% } %>
+                        <% } %>
+                        <% c=c+1 %>  
                         <% } %>
         </div>
     </div>
