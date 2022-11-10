@@ -30,8 +30,8 @@ module.exports.renderLoginForm=(req, res)=>{
 module.exports.loginUser=async(req, res)=>{
     req.flash("success", `Welcome back to Website, ${req.user.username}`)
     const redirectUrl= req.session.returnTo || '/products'
-    delete req.session.returnTo
     res.redirect(redirectUrl)
+    delete req.session.returnTo;
 }
 module.exports.logoutUser=(req, res, next) => {
     req.logout(function(err){

@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+const User=require("../models/user")
 const { cloudinary } = require("../cloudinary");
 
 
@@ -99,8 +100,12 @@ module.exports.shoppingcart= async(req, res)=>{
 module.exports.updateCart = async(req, res)=>{
     const id=req.body.cart;
     const qty=req.body.qty;
-    console.log(id, qty)
+    const user1=req.body.user;
+    console.log(id, qty, user1)
     const product1= await Product.findById(id);
-
-    res.render("shop/cart", {product: product1, qty})
+    console.log(product1.title)
+    console.log(user1.email)
+    user1.cart.push(product1._id);
+    console.log(user1.cart)
+    // res.render("shop/cart", {product: user.cart, qty})
 }

@@ -1,3 +1,4 @@
+const { array } = require("joi");
 const mongoose= require("mongoose")
 const passportLocalMongoose= require("passport-local-mongoose")
 
@@ -8,7 +9,9 @@ const userSchema= new Schema({
         type: String,
         required: true,
         unique: true
-    }
+    }, cart: [{
+        type: Object
+    }]
 });
 
 userSchema.plugin(passportLocalMongoose) //it adds username(validates unique) password to the schema without actually mentioning them
