@@ -6,7 +6,7 @@ Ecommerce Webiste named "kraftOfi" where one can buy and sell traditional handcr
 
 You can visit the website by clicking on the link below:
 
-[kraftOfi Website](https://kraftofi.herokuapp.com/) or visiting https://kraftofi.herokuapp.com/
+[kraftOfi Website](https://kraftofi.cyclic.app/) or visiting https://kraftofi.cyclic.app/
 
 # Contributors
 
